@@ -8,6 +8,15 @@ import UIKit
 
 class ChooseViewController: UIViewController {
     
+    private lazy var mainButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "cancel"), for: .normal)
+        button.addTarget(self, action: #selector(toMain), for: .touchUpInside)
+        button.sizeToFit()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
@@ -33,6 +42,7 @@ class ChooseViewController: UIViewController {
         scrollView.addSubview(stackView)
         
         view.addSubview(doneButton)
+        scrollView.addSubview(mainButton)
         
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -40,12 +50,15 @@ class ChooseViewController: UIViewController {
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
+            mainButton.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 0),
+            mainButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 5),
+            
             doneButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -5),
             doneButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             doneButton.heightAnchor.constraint(equalToConstant: 60),
             doneButton.widthAnchor.constraint(equalToConstant: 280),
             
-            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20),
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 100),
             stackView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
         ])
@@ -87,6 +100,13 @@ class ChooseViewController: UIViewController {
     lazy var cardViews: [CardView] = {
         cards.map { CardView(card: $0) }
     }()
+    
+    @objc private func toMain(){
+        let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+        feedbackGenerator.prepare()
+        feedbackGenerator.impactOccurred()
+        self.navigationController?.pushViewController(MainViewController(), animated: true)
+    }
     
     @objc func toGivingCard() {
         let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)

@@ -38,24 +38,6 @@ class MainViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-
-    private lazy var settingsButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "ButtonToSettingsView"), for: .normal)
-        button.addTarget(self, action: #selector(toSettings), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.sizeToFit()
-        return button
-    }()
-
-    private lazy var infoButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "ButtonToInfoView"), for: .normal)
-        button.addTarget(self, action: #selector(toInfo), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.sizeToFit()
-        return button
-    }()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -78,8 +60,6 @@ class MainViewController: UIViewController {
         view.addSubview(logoImage)
         view.addSubview(textLabel)
         view.addSubview(playButton)
-        view.addSubview(settingsButton)
-        view.addSubview(infoButton)
     }
 
     private func setupVC(){
@@ -88,7 +68,6 @@ class MainViewController: UIViewController {
         navigationItem.hidesBackButton = true
     }
 
-    
     @objc private func toPlay(){
         self.navigationController?.pushViewController(ChooseViewController(), animated: true)
     }
@@ -109,7 +88,7 @@ class MainViewController: UIViewController {
 
     func setupConstraints(){
         NSLayoutConstraint.activate([
-            logoImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            logoImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60),
             logoImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             logoImage.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.5),
@@ -125,15 +104,6 @@ class MainViewController: UIViewController {
             playButton.heightAnchor.constraint(equalToConstant: 80),
             playButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -80),
             
-            settingsButton.topAnchor.constraint(equalTo: playButton.bottomAnchor, constant: 16),
-            settingsButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            settingsButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -6),
-            settingsButton.widthAnchor.constraint(equalToConstant: 60),
-            settingsButton.heightAnchor.constraint(equalToConstant: 60),
-            
-            infoButton.topAnchor.constraint(equalTo: playButton.bottomAnchor, constant: 16),
-            infoButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
-            infoButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -6),
         ])
     }
 
