@@ -1,6 +1,6 @@
 # Catch The Mafia
 
-A mafia card game for 3-30 players.
+A presenter of mafia/werewolf card game for 3-30 players.
 
 ## Technical Specifications
 
