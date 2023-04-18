@@ -21,20 +21,20 @@ class SettingsViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupVC()
         addSubview()
         setupConstraints()
     }
-
+    
     private func setupVC(){
         view.backgroundColor = UIColor.mainBlack
         navigationItem.hidesBackButton = true
@@ -59,5 +59,5 @@ class SettingsViewController: UIViewController {
         feedbackGenerator.impactOccurred()
         self.navigationController?.pushViewController(MainViewController(), animated: true)
     }
-
+    
 }

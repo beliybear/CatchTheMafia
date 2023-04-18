@@ -12,10 +12,11 @@
 "PLAY" = "Играть";
 "START" = "Играть";
 "MAFIA" = "МАФИЯ";
+"HOOKER" = "ЛЮБОВНИЦА";
 "CIVILIAN" = "МИРНЫЙ";
 "SHERIFF" = "ШЕРИФ";
 "DOCTOR" = "ДОКТОР";
 "SPEAKER" = "ВЕДУЩИЙ";
 "Not enough cards" = "Недостаточно карт";
-"You need at least 2 cards to start the game" = "Вам нужно выбрать не менее 1 карты, чтобы начать игру";
+"You need at least 2 cards to start the game" = "Вам нужно выбрать не менее 2 карт, чтобы начать игру";
 "TAP ON ME" = "Нажми на меня";

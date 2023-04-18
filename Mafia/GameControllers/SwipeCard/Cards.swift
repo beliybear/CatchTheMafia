@@ -51,6 +51,12 @@ class Card {
         
         countCard += 1
         countCardLabel.text = "\(countCard)"
+        if word == NSLocalizedString("SPEAKER", comment: ""){
+            if countCard > 0{
+                countCardLabel.text = "1"
+                countCard = 1
+            }
+        }
     }
     
     @objc func minusAction() {
