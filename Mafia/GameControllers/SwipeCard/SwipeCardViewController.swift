@@ -24,7 +24,8 @@ class SwipeCardViewController: UIPageViewController, UIPageViewControllerDataSou
         button.addTarget(self, action: #selector(showButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.isHidden = true
-        button.isEnabled = false
+        button.isEnabled = true
+        button.alpha = 1
         return button
     }()
     
@@ -183,7 +184,6 @@ class SwipeCardViewController: UIPageViewController, UIPageViewControllerDataSou
                 blackOverlay.removeFromSuperview()
                 cardView.wordLabel.isHidden = false
                 self.isOverlayTapped = true
-                self.showButton.isEnabled = true
             })
         }
     }
@@ -194,6 +194,7 @@ class SwipeCardViewController: UIPageViewController, UIPageViewControllerDataSou
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         if isOverlayTapped{
+            isOverlayTapped = false
             if let index = cardViewControllers.firstIndex(of: viewController),
                index < (cardViewControllers.count - 1) {
                 let nextVC = cardViewControllers[index + 1]
