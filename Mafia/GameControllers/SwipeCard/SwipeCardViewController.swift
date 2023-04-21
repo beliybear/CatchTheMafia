@@ -24,8 +24,6 @@ class SwipeCardViewController: UIPageViewController, UIPageViewControllerDataSou
         button.addTarget(self, action: #selector(showButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.isHidden = true
-        button.isEnabled = true
-        button.alpha = 1
         return button
     }()
     
@@ -164,6 +162,16 @@ class SwipeCardViewController: UIPageViewController, UIPageViewControllerDataSou
         ])
     }
     
+    private func updateShowButton(){
+        if isOverlayTapped {
+            showButton.alpha = 1
+            showButton.isEnabled = true
+        } else {
+            showButton.alpha = 0.5
+            showButton.isEnabled = false
+        }
+    }
+    
     @objc private func cardTapped(_ sender: UITapGestureRecognizer) {
         let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
         feedbackGenerator.prepare()
@@ -183,7 +191,8 @@ class SwipeCardViewController: UIPageViewController, UIPageViewControllerDataSou
             }, completion: { _ in
                 blackOverlay.removeFromSuperview()
                 cardView.wordLabel.isHidden = false
-                self.isOverlayTapped = true
+                self.isOverlayTapped = blackOverlay.superview == nil
+                self.updateShowButton()
             })
         }
     }
@@ -195,6 +204,7 @@ class SwipeCardViewController: UIPageViewController, UIPageViewControllerDataSou
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         if isOverlayTapped{
             isOverlayTapped = false
+            updateShowButton()
             if let index = cardViewControllers.firstIndex(of: viewController),
                index < (cardViewControllers.count - 1) {
                 let nextVC = cardViewControllers[index + 1]
