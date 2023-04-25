@@ -202,11 +202,14 @@ class SwipeCardViewController: UIPageViewController, UIPageViewControllerDataSou
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        if isOverlayTapped{
-            isOverlayTapped = false
-            updateShowButton()
-            if let index = cardViewControllers.firstIndex(of: viewController),
-               index < (cardViewControllers.count - 1) {
+        if let index = cardViewControllers.firstIndex(of: viewController) {
+            // Если это не последняя карточка, сбросить значение isOverlayTapped
+            if index < (cardViewControllers.count - 1) {
+                isOverlayTapped = false
+                updateShowButton()
+            }
+            
+            if index < (cardViewControllers.count - 1) {
                 let nextVC = cardViewControllers[index + 1]
                 addConstraints(to: nextVC)
                 return nextVC
