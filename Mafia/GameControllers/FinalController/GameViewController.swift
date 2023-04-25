@@ -24,7 +24,7 @@ class GameViewController: UIViewController {
         button.sizeToFit()
         return button
     }()
-
+    
     private lazy var textLabel: UILabel = {
         let mainText = UILabel()
         mainText.text = NSLocalizedString("Let's play!", comment: "")
@@ -73,23 +73,12 @@ class GameViewController: UIViewController {
     }
     
     @objc private func toMain(){
-        if isReady(){
-            let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
-            feedbackGenerator.prepare()
-            feedbackGenerator.impactOccurred()
-            self.navigationController?.pushViewController(MainViewController(), animated: true)
-        }
+        let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+        feedbackGenerator.prepare()
+        feedbackGenerator.impactOccurred()
+        self.navigationController?.pushViewController(MainViewController(), animated: true)
     }
     
-    func isReady() -> Bool {
-        
-        return true
-    }
-    
-    func showAlert(){
-        
-    }
-
     // CONSTRAINTS
     
     func setupConstraints() {
@@ -101,15 +90,15 @@ class GameViewController: UIViewController {
             mainButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
             mainButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 5),
             
-             timeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-             timeLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-             timeLabel.heightAnchor.constraint(equalToConstant: 250),
-             timeLabel.widthAnchor.constraint(equalToConstant: 250),
+            timeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            timeLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            timeLabel.heightAnchor.constraint(equalToConstant: 250),
+            timeLabel.widthAnchor.constraint(equalToConstant: 250),
             
             textLabel.heightAnchor.constraint(equalToConstant: 50),
-             textLabel.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 30),
-             textLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-             textLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            textLabel.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 30),
+            textLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            textLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
         ])
     }
 }

@@ -8,14 +8,14 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    
     private lazy var logoImage: UIImageView = {
-          let logoImage = UIImageView()
-          logoImage.image = UIImage (named: "AppIcon")
-          logoImage.translatesAutoresizingMaskIntoConstraints = false
-          return logoImage
-      }()
-
+        let logoImage = UIImageView()
+        logoImage.image = UIImage (named: "AppIcon")
+        logoImage.translatesAutoresizingMaskIntoConstraints = false
+        return logoImage
+    }()
+    
     private lazy var textLabel: UILabel = {
         let mainText = UILabel()
         mainText.text = NSLocalizedString("Catch The Mafia", comment: "")
@@ -26,7 +26,7 @@ class MainViewController: UIViewController {
         mainText.setContentCompressionResistancePriority(.required, for: .vertical)
         return mainText
     }()
-
+    
     private lazy var playButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor.mainWhite
@@ -43,32 +43,35 @@ class MainViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
-
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         setupVC()
         addSubview()
         setupConstraints()
     }
-
+    
     private func addSubview(){
         view.addSubview(logoImage)
         view.addSubview(textLabel)
         view.addSubview(playButton)
     }
-
+    
     private func setupVC(){
         view.backgroundColor = UIColor.mainBlack
         view.scalesLargeContentImage = true
         navigationItem.hidesBackButton = true
     }
-
+    
     @objc private func toPlay(){
+        let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+        feedbackGenerator.prepare()
+        feedbackGenerator.impactOccurred()
         self.navigationController?.pushViewController(ChooseViewController(), animated: true)
     }
     
@@ -85,7 +88,7 @@ class MainViewController: UIViewController {
         feedbackGenerator.impactOccurred()
         self.navigationController?.pushViewController(InfoViewController(), animated: true)
     }
-
+    
     func setupConstraints(){
         NSLayoutConstraint.activate([
             logoImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60),
@@ -106,7 +109,7 @@ class MainViewController: UIViewController {
             
         ])
     }
-
-
+    
+    
 }
 

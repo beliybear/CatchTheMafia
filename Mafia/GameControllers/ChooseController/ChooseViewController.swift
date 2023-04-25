@@ -17,11 +17,23 @@ class ChooseViewController: UIViewController {
         return button
     }()
     
+    private lazy var doneButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .mainWhite
+        button.layer.cornerRadius = 25
+        button.setTitle(NSLocalizedString("START", comment: ""), for: .normal)
+        button.setTitleColor(UIColor.black, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Inter-SemiBold", size: 30)
+        button.addTarget(self, action: #selector(toGivingCard), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
@@ -60,7 +72,7 @@ class ChooseViewController: UIViewController {
             
             stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 100),
             stackView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -80),
         ])
         
         cardViews.forEach { cardView in
@@ -72,18 +84,6 @@ class ChooseViewController: UIViewController {
         
     }
     
-    private lazy var doneButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .mainWhite
-        button.layer.cornerRadius = 25
-        button.setTitle(NSLocalizedString("START", comment: ""), for: .normal)
-        button.setTitleColor(UIColor.black, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Inter-SemiBold", size: 30)
-        button.addTarget(self, action: #selector(toGivingCard), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
     private func setupVC() {
         view.backgroundColor = UIColor.mainBlack
         self.navigationController?.navigationBar.isHidden = true
@@ -94,7 +94,8 @@ class ChooseViewController: UIViewController {
         Card(word: NSLocalizedString("CIVILIAN", comment: ""), avatar: UIImage(named: "civilian")!, countCard: 0),
         Card(word: NSLocalizedString("SHERIFF", comment: ""), avatar: UIImage(named: "police")!, countCard: 0),
         Card(word: NSLocalizedString("DOCTOR", comment: ""), avatar: UIImage(named: "doctor")!, countCard: 0),
-        Card(word: NSLocalizedString("SPEAKER", comment: ""), avatar: UIImage(named: "Speaker")!, countCard: 1)
+        Card(word: NSLocalizedString("HOOKER", comment: ""), avatar: UIImage(named: "hooker")!, countCard: 0),
+        Card(word: NSLocalizedString("SPEAKER", comment: ""), avatar: UIImage(named: "Speaker")!, countCard: 0)
     ]
     
     lazy var cardViews: [CardView] = {
@@ -112,23 +113,15 @@ class ChooseViewController: UIViewController {
         let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
         feedbackGenerator.prepare()
         feedbackGenerator.impactOccurred()
-        cardViews.forEach { cardView in
-            cardView.card.countCard = cardView.countCard
-        }
-        let filteredCards = cards.filter { $0.countCard > 0 }
-        var allCards: [Card] = []
-        filteredCards.forEach { card in
-            allCards.append(contentsOf: Array(repeating: card, count: card.countCard))
-        }
-        let shuffledCards = allCards.shuffled()
-        let newCardViews = shuffledCards.map { CardView(card: $0) }
-        if newCardViews.count >= 2 {
+
+        let totalCardCount = cards.reduce(0, { $0 + $1.countCard })
+        if totalCardCount > 2 {
             let swipeCardVC = SwipeCardViewController()
-            swipeCardVC.cardViews = newCardViews
+            swipeCardVC.cards = cards
             self.navigationController?.pushViewController(swipeCardVC, animated: true)
         } else {
             let title = NSLocalizedString("Not enough cards", comment: "")
-            let message = NSLocalizedString("You need at least 2 cards to start the game", comment: "")
+            let message = NSLocalizedString("You need at least 3 cards to start the game", comment: "")
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             let okTitle = NSLocalizedString("OK", comment: "OK button title")
             let okAction = UIAlertAction(title: okTitle, style: .default, handler: nil)
@@ -138,4 +131,6 @@ class ChooseViewController: UIViewController {
     }
 
 
+    
+    
 }

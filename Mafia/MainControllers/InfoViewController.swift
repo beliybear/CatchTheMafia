@@ -57,15 +57,15 @@ class InfoViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupVC()
         addSubviews()
         setupConstraints()
@@ -90,16 +90,16 @@ class InfoViewController: UIViewController {
         NSLayoutConstraint.activate([
             
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
-             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
             mainButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
             mainButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 5),
             
             textView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-             textView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-             textView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            textView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            textView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
         ])
     }
     

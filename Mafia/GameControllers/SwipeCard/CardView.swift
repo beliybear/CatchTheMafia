@@ -28,7 +28,7 @@ class CardView: UIView {
         label.layer.zPosition = 99
         return label
     }()
-    
+
     var countCard: Int {
         get { return card.countCard }
         set(newValue) { card.countCard = newValue }
@@ -48,19 +48,12 @@ class CardView: UIView {
         configureView()
         setSpeakerCard()
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     public func setSpeakerCard(){
-        if card.word == "SPEAKER" || card.word == "ВЕДУЩИЙ"{
-            card.countCard = 1
-            card.plusButton.isHidden = true
-            card.minusButton.isHidden = true
-            card.countCardLabel.isHidden = true
-        }
-        
     }
     
     private func setupSubviews() {
@@ -100,13 +93,13 @@ class CardView: UIView {
             avatarImageView.leadingAnchor.constraint(equalTo: frameImageView.leadingAnchor),
             avatarImageView.trailingAnchor.constraint(equalTo: frameImageView.trailingAnchor),
             avatarImageView.heightAnchor.constraint(equalToConstant: 300),
-
+            
             wordLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: -20),
             wordLabel.centerXAnchor.constraint(equalTo: frameImageView.centerXAnchor),
             
             card.plusButton.bottomAnchor.constraint(equalTo: frameImageView.bottomAnchor, constant: -5),
             card.plusButton.leadingAnchor.constraint(equalTo: frameImageView.leadingAnchor, constant: 8),
-
+            
             card.minusButton.bottomAnchor.constraint(equalTo: frameImageView.bottomAnchor, constant: -5),
             card.minusButton.trailingAnchor.constraint(equalTo: frameImageView.trailingAnchor, constant: -8),
             
