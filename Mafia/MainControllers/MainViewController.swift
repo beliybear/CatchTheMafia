@@ -66,11 +66,13 @@ class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        updateAudio()
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
@@ -81,12 +83,7 @@ class MainViewController: UIViewController {
         setupConstraints()
         setupAudioPlayer()
         
-        let isPlaying = UserDefaults.standard.bool(forKey: "musicState")
-        if isPlaying {
-            playAudio()
-        } else {
-            stopAudio()
-        }
+        updateAudio()
     }
     
     private func setupAudioPlayer() {
@@ -99,6 +96,15 @@ class MainViewController: UIViewController {
             }
         } else {
             print("Не удалось найти файл аудио")
+        }
+    }
+    
+    private func updateAudio(){
+        let isPlaying = UserDefaults.standard.bool(forKey: "musicState")
+        if isPlaying {
+            playAudio()
+        } else {
+            stopAudio()
         }
     }
     
