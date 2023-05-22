@@ -8,7 +8,7 @@
 
 "Catch The Mafia" = "Catch The Mafia";
 "New Game" = "New Game";
-"Let's play!" = "Let's play!";
+"Made by BeliyBear" = "Made by BeliyBear";
 "START" = "START";
 "MAFIA" = "MAFIA";
 "CIVILIAN" = "CIVILIAN";
@@ -20,3 +20,8 @@
 "Not enough cards" = "Not enough cards";
 "You need at least 3 cards to start the game" = "You need at least 3 cards to start the game";
 "TAP ON ME" = "TAP ON ME";
+"Start Timer" = "Start Timer";
+"Stop Timer" = "Stop Timer";
+"Start Again" = "Start Again";
+"Information" = "Information";
+"The timer is used to limit the discussion time during the game phases." = "The timer is used to limit the discussion time during the game phases.";

@@ -15,16 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error)
-            in
-            
-            guard granted else {return}
-            self.notificationCenter.getNotificationSettings{ (settings) in
-                guard settings.authorizationStatus == .authorized else {return}
-            }
-        }
-        
-        sendNotifications()
+//        notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error)
+//            in
+//
+//            guard granted else {return}
+//            self.notificationCenter.getNotificationSettings{ (settings) in
+//                guard settings.authorizationStatus == .authorized else {return}
+//            }
+//        }
+//
+//        sendNotifications()
         return true
     }
     
@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let request = UNNotificationRequest(identifier: "notification", content: content, trigger: trigger)
         
         notificationCenter.add(request) { (error) in
-            print(error?.localizedDescription)
+            print(error?.localizedDescription as Any)
         }
     }
     

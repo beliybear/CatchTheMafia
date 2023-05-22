@@ -133,7 +133,7 @@ class SwipeCardViewController: UIPageViewController, UIPageViewControllerDataSou
         
         NSLayoutConstraint.activate([
             mainButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
-            mainButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 5),
+            mainButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15),
         ])
     }
     

@@ -62,8 +62,8 @@ class ChooseViewController: UIViewController {
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
-            mainButton.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 0),
-            mainButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 5),
+            mainButton.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 5),
+            mainButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15),
             
             doneButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -5),
             doneButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -108,6 +108,7 @@ class ChooseViewController: UIViewController {
         feedbackGenerator.impactOccurred()
         self.navigationController?.pushViewController(MainViewController(), animated: true)
     }
+    
     
     @objc func toGivingCard() {
         let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)

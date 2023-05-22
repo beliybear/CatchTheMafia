@@ -10,9 +10,7 @@ import UIKit
 class GameViewController: UIViewController {
     
     // VAR
-    
     private var timer: Timer?
-    private var timeElapsed: Int = 0
     private let timeLabel = UILabel()
     
     private lazy var mainButton: UIButton = {
@@ -21,14 +19,43 @@ class GameViewController: UIViewController {
         button.addTarget(self, action: #selector(toMain), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.isUserInteractionEnabled = true
+        return button
+    }()
+    
+    private lazy var infoButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "quest"), for: .normal)
+        button.addTarget(self, action: #selector(toInformation), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.isUserInteractionEnabled = true
+        return button
+    }()
+    
+    private lazy var startTimer: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "playButton"), for: .normal)
+        button.addTarget(self, action: #selector(startTime), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.isUserInteractionEnabled = true
+        button.sizeToFit()
+        return button
+    }()
+    
+    private lazy var resetTimer: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "resetButton"), for: .normal)
+        button.addTarget(self, action: #selector(resetTime), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.isUserInteractionEnabled = true
         button.sizeToFit()
         return button
     }()
     
     private lazy var textLabel: UILabel = {
         let mainText = UILabel()
-        mainText.text = NSLocalizedString("Let's play!", comment: "")
+        mainText.text = NSLocalizedString("Made by BeliyBear", comment: "")
         mainText.textAlignment = .center
+        mainText.layer.opacity = 0.1
         mainText.font = UIFont(name: "Inter-SemiBold", size: 30)
         mainText.textColor = UIColor.mainWhite
         mainText.translatesAutoresizingMaskIntoConstraints = false
@@ -43,28 +70,42 @@ class GameViewController: UIViewController {
         setupTimeLabel()
         setupVC()
         setupConstraints()
-        startTimer()
     }
     
     private func setupTimeLabel() {
         timeLabel.textAlignment = .center
-        timeLabel.text = "0:00"
+        timeLabel.text = "1:00"
         timeLabel.translatesAutoresizingMaskIntoConstraints = false
         timeLabel.textColor = .mainWhite
         timeLabel.font = .systemFont(ofSize: 60)
     }
     
-    private func startTimer() {
+    @objc private func startTime() {
+        // Остановить текущий таймер перед созданием нового
+        timer?.invalidate()
+        
+        var timeRemaining = 60
+        updateTimeLabel(timeRemaining)
+        
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
             guard let self = self else { return }
-            self.timeElapsed += 1
-            self.updateTimeLabel()
+            timeRemaining -= 1
+            self.updateTimeLabel(timeRemaining)
+            
+            if timeRemaining == 0 {
+                self.timer?.invalidate()
+            }
         }
     }
     
-    private func updateTimeLabel() {
-        let minutes = timeElapsed / 60
-        let seconds = timeElapsed % 60
+    @objc private func resetTime(){
+        timer?.invalidate()
+        timeLabel.text = "1:00"
+    }
+    
+    private func updateTimeLabel(_ timeRemaining: Int) {
+        let minutes = timeRemaining / 60
+        let seconds = timeRemaining % 60
         timeLabel.text = String(format: "%d:%02d", minutes, seconds)
     }
     
@@ -79,26 +120,53 @@ class GameViewController: UIViewController {
         self.navigationController?.pushViewController(MainViewController(), animated: true)
     }
     
+    @objc private func toInformation() {
+        let alertController = UIAlertController(title: NSLocalizedString("Information", comment: ""),
+                                                message: NSLocalizedString("The timer is used to limit the discussion time during the game phases.", comment: ""),
+                                                preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""),
+                                     style: .default,
+                                     handler: nil)
+        
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
     // CONSTRAINTS
     
     func setupConstraints() {
         view.addSubview(timeLabel)
         view.addSubview(textLabel)
         view.addSubview(mainButton)
+        view.addSubview(startTimer)
+        view.addSubview(resetTimer)
+        view.addSubview(infoButton)
         NSLayoutConstraint.activate([
             
             mainButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
-            mainButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 5),
+            mainButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15),
+            
+            infoButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
+            infoButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -55),
             
             timeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            timeLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            timeLabel.heightAnchor.constraint(equalToConstant: 250),
+            timeLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -30),
+            timeLabel.heightAnchor.constraint(equalToConstant: 100),
             timeLabel.widthAnchor.constraint(equalToConstant: 250),
             
             textLabel.heightAnchor.constraint(equalToConstant: 50),
-            textLabel.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 30),
+            textLabel.topAnchor.constraint(equalTo: resetTimer.bottomAnchor, constant: 30),
             textLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             textLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            
+            startTimer.heightAnchor.constraint(equalToConstant: 60),
+            startTimer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100),
+            startTimer.leadingAnchor.constraint(equalTo: timeLabel.leadingAnchor, constant: 45),
+            
+            resetTimer.heightAnchor.constraint(equalToConstant: 60),
+            resetTimer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100),
+            resetTimer.trailingAnchor.constraint(equalTo: timeLabel.trailingAnchor, constant: -45),
         ])
     }
 }
