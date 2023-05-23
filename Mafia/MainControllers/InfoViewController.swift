@@ -27,7 +27,7 @@ class InfoViewController: UIViewController {
         tv.backgroundColor = .mainBlack
         tv.font = UIFont.systemFont(ofSize: 25)
         tv.textColor = .mainWhite
-        tv.text = """
+        tv.text = NSLocalizedString("""
         # Catch The Mafia
         
         ## Overview
@@ -49,7 +49,7 @@ class InfoViewController: UIViewController {
         
         ## Conclusion
         Catch the Mafia is a fun and engaging game that is perfect for groups of friends or family. It requires strategy, teamwork, and a bit of deception to win. So gather some friends, and see if you can figure out who among you is the Mafia!
-        """
+        """, comment: "")
         return tv
     }()
     
@@ -95,11 +95,11 @@ class InfoViewController: UIViewController {
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
             mainButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
-            mainButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 5),
+            mainButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15),
             
-            textView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            textView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            textView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            textView.topAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.topAnchor),
+            textView.leadingAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.leadingAnchor),
+            textView.trailingAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.trailingAnchor),
         ])
     }
     
