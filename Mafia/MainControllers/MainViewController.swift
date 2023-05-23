@@ -67,8 +67,16 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        DispatchQueue.main.async {
+            self.updateAudio()
+        }
     }
-    
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        updateAudio()
+    }
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
@@ -81,12 +89,8 @@ class MainViewController: UIViewController {
         setupConstraints()
         setupAudioPlayer()
         
-        let isPlaying = UserDefaults.standard.bool(forKey: "musicState")
-        if isPlaying {
-            playAudio()
-        } else {
-            stopAudio()
-        }
+        updateAudio()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateAudioState), name: Notification.Name("AudioStateChange"), object: nil)
     }
     
     private func setupAudioPlayer() {
@@ -99,6 +103,21 @@ class MainViewController: UIViewController {
             }
         } else {
             print("Не удалось найти файл аудио")
+        }
+    }
+    
+    private func updateAudio(){
+        let isPlaying = UserDefaults.standard.bool(forKey: "musicState")
+        if isPlaying {
+            playAudio()
+        } else {
+            stopAudio()
+        }
+    }
+    
+    @objc func updateAudioState() {
+        DispatchQueue.main.async {
+            self.updateAudio()
         }
     }
     
@@ -145,8 +164,10 @@ class MainViewController: UIViewController {
         if audioPlayer.isPlaying {
             stopAudio()
         } else {
+            stopAudio()
             playAudio()
         }
+        NotificationCenter.default.post(name: Notification.Name("AudioStateChange"), object: nil)
     }
     
     private func playAudio() {
@@ -157,6 +178,7 @@ class MainViewController: UIViewController {
     
     private func stopAudio() {
         audioPlayer.stop()
+        audioPlayer.currentTime = 0 // добавьте эту строку
         audioButton.setImage(UIImage(named: "VolumeOff"), for: .normal)
         saveMusicState(isPlaying: false)
     }
