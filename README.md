@@ -17,3 +17,7 @@ If you have ideas that you are interested in adding to the game, feel free to co
 ## License
 
 The codebase is shared under the MIT License. Copyright (c) Ian Belyakov 2022-2023. All Rights Reserved. Redistribution of the codebase in any form commercially is strictly forbidden.
+
+## Screenshots
+
+<img src="./Pictures/Mafia.png" width="500" alt="Mafia">

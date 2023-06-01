@@ -176,7 +176,7 @@ class SwipeCardViewController: UIPageViewController, UIPageViewControllerDataSou
         let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
         feedbackGenerator.prepare()
         feedbackGenerator.impactOccurred()
-        
+            
         if let cardView = sender.view as? CardView,
            let blackOverlay = cardView.viewWithTag(100) {
             

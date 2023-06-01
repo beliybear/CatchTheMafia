@@ -63,6 +63,15 @@ class MainViewController: UIViewController {
         return button
     }()
     
+    private lazy var infoButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "quest"), for: .normal)
+        button.addTarget(self, action: #selector(toInformation), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.isUserInteractionEnabled = true
+        return button
+    }()
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -153,7 +162,7 @@ class MainViewController: UIViewController {
         self.navigationController?.pushViewController(SettingsViewController(), animated: true)
     }
     
-    @objc private func toInfo(){
+    @objc private func toInformation(){
         let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
         feedbackGenerator.prepare()
         feedbackGenerator.impactOccurred()
@@ -178,7 +187,9 @@ class MainViewController: UIViewController {
     
     private func stopAudio() {
         audioPlayer.stop()
-        audioPlayer.currentTime = 0 // добавьте эту строку
+        if audioPlayer.currentTime > 1.30 {
+            audioPlayer.currentTime = 0
+        }
         audioButton.setImage(UIImage(named: "VolumeOff"), for: .normal)
         saveMusicState(isPlaying: false)
     }
