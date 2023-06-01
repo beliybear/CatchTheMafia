@@ -20,14 +20,4 @@ The codebase is shared under the MIT License. Copyright (c) Ian Belyakov 2022-20
 
 ## Screenshots
 
-<img src="./Photo/Main.jpeg" width="250" alt="Main">
-
-<img src="./Photo/Choose.jpeg" width="250" alt="Choose">
-
-<img src="./Photo/Seeing.jpeg" width="250" alt="Seeing">
-
-<img src="./Photo/Choose2.jpeg" width="250" alt="Choose2">
-
-<img src="./Photo/Play.jpeg" width="250" alt="Play">
-
-<img src="./Photo/Timer.jpeg" width="250" alt="Timer">
+<img src="./Pictures/Mafia.jpg" width="500" alt="Mafia">
