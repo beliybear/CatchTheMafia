@@ -20,14 +20,14 @@ The codebase is shared under the MIT License. Copyright (c) Ian Belyakov 2022-20
 
 ## Screenshots
 
-![Main](./Photo/Main.jpeg)
+<img src="./Photo/Main.jpeg" width="250" alt="Main">
 
-![Choose](./Photo/Choose.jpeg)
+<img src="./Photo/Choose.jpeg" width="250" alt="Choose">
 
-![Choose2](./Photo/Choose2.jpeg)
+<img src="./Photo/Seeing.jpeg" width="250" alt="Seeing">
 
-![Seeing](./Photo/Seeing.jpeg)
+<img src="./Photo/Choose2.jpeg" width="250" alt="Choose2">
 
-![Play](./Photo/Play.jpeg)
+<img src="./Photo/Play.jpeg" width="250" alt="Play">
 
-![Timer](./Photo/Timer.jpeg)
+<img src="./Photo/Timer.jpeg" width="250" alt="Timer">
