@@ -20,4 +20,4 @@ The codebase is shared under the MIT License. Copyright (c) Ian Belyakov 2022-20
 
 ## Screenshots
 
-<img src="./Pictures/Mafia.jpg" width="500" alt="Mafia">
+<img src="./Pictures/Mafia.jpeg" width="500" alt="Mafia">
