@@ -17,3 +17,17 @@ If you have ideas that you are interested in adding to the game, feel free to co
 ## License
 
 The codebase is shared under the MIT License. Copyright (c) Ian Belyakov 2022-2023. All Rights Reserved. Redistribution of the codebase in any form commercially is strictly forbidden.
+
+## Screenshots
+
+![Main](./Photo/Main.jpeg)
+
+![Choose](./Photo/Choose.jpeg)
+
+![Choose2](./Photo/Choose2.jpeg)
+
+![Seeing](./Photo/Seeing.jpeg)
+
+![Play](./Photo/Play.jpeg)
+
+![Timer](./Photo/Timer.jpeg)
