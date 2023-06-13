@@ -18,7 +18,7 @@
 "DOCTOR" = "ДОКТОР";
 "SPEAKER" = "ВЕДУЩИЙ";
 "Not enough cards" = "Недостаточно карт";
-"You need at least 2 cards to start the game" = "Вам нужно выбрать не менее 2 карт, чтобы начать игру";
+"You need at least 2 cards to start the game" = "Вам нужно выбрать не менее 3 карт, чтобы начать игру";
 "Don't forget to update me!" = "Не забудь апдейтнуть меня!";
 "TAP ON ME" = "Нажми на меня";
 "Start Timer" = "Начать говорить";
