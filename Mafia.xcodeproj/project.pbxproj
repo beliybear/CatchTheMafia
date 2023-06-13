@@ -3,14 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A31283329C12EA20030D752 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A31283029C12EA20030D752 /* logo.png */; };
 		3A31283629C12FC80030D752 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A31283529C12FC80030D752 /* Inter-SemiBold.ttf */; };
 		3A38E99329CF2FA5008BBE3E /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A38E99229CF2FA5008BBE3E /* Cards.swift */; };
-		3A9AAA5629D0C8AD001C69FA /* Speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A9AAA5529D0C8AD001C69FA /* Speaker.png */; };
 		3A9AAA5929D0CFE9001C69FA /* SwipeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AAA5829D0CFE9001C69FA /* SwipeCardViewController.swift */; };
 		3AA481E42A1B08A600C91261 /* mafiaSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3AA481E32A1B08A600C91261 /* mafiaSong.mp3 */; };
 		3AB2687229BAFFFA00CDF564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2687129BAFFFA00CDF564 /* AppDelegate.swift */; };
@@ -18,7 +16,6 @@
 		3AB2687B29BAFFFB00CDF564 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AB2687A29BAFFFB00CDF564 /* Assets.xcassets */; };
 		3AB268A229BB00B900CDF564 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB268A129BB00B900CDF564 /* UIColorExtension.swift */; };
 		3AC1550929D5D653001A6B8E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AC1550829D5D653001A6B8E /* Launch Screen.storyboard */; };
-		3AC6BB3729D5F46400F6D7FF /* cardFrame.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3AC6BB3629D5F46400F6D7FF /* cardFrame.svg */; };
 		3AE70DBE29CF45B400A970F2 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE70DBB29CF45B400A970F2 /* InfoViewController.swift */; };
 		3AE70DBF29CF45B400A970F2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE70DBC29CF45B400A970F2 /* MainViewController.swift */; };
 		3AE70DC029CF45B400A970F2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE70DBD29CF45B400A970F2 /* SettingsViewController.swift */; };
@@ -29,10 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3A31283029C12EA20030D752 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		3A31283529C12FC80030D752 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		3A38E99229CF2FA5008BBE3E /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
-		3A9AAA5529D0C8AD001C69FA /* Speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Speaker.png; sourceTree = "<group>"; };
 		3A9AAA5829D0CFE9001C69FA /* SwipeCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCardViewController.swift; sourceTree = "<group>"; };
 		3AA481E32A1B08A600C91261 /* mafiaSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mafiaSong.mp3; sourceTree = "<group>"; };
 		3AB2686E29BAFFFA00CDF564 /* Mafia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mafia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,7 +42,6 @@
 		3AC1550829D5D653001A6B8E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		3AC1550D29D5D77A001A6B8E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3AC1551429D5D822001A6B8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3AC6BB3629D5F46400F6D7FF /* cardFrame.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cardFrame.svg; sourceTree = "<group>"; };
 		3AE70DBB29CF45B400A970F2 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoViewController.swift; path = Mafia/MainControllers/InfoViewController.swift; sourceTree = SOURCE_ROOT; };
 		3AE70DBC29CF45B400A970F2 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = Mafia/MainControllers/MainViewController.swift; sourceTree = SOURCE_ROOT; };
 		3AE70DBD29CF45B400A970F2 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Mafia/MainControllers/SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -67,16 +61,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3A31282D29C12EA20030D752 /* Pictures  */ = {
-			isa = PBXGroup;
-			children = (
-				3AC6BB3629D5F46400F6D7FF /* cardFrame.svg */,
-				3A9AAA5529D0C8AD001C69FA /* Speaker.png */,
-				3A31283029C12EA20030D752 /* logo.png */,
-			);
-			path = "Pictures ";
-			sourceTree = "<group>";
-		};
 		3A31283429C12FC80030D752 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,7 +118,6 @@
 			children = (
 				3AB2687029BAFFFA00CDF564 /* Mafia */,
 				3A31283429C12FC80030D752 /* Fonts */,
-				3A31282D29C12EA20030D752 /* Pictures  */,
 				3AB2688729BAFFFB00CDF564 /* MafiaTests */,
 				3AB2689129BAFFFB00CDF564 /* MafiaUITests */,
 				3AB2686F29BAFFFA00CDF564 /* Products */,
@@ -229,7 +212,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					3AB2686D29BAFFFA00CDF564 = {
 						CreatedOnToolsVersion = 14.2;
@@ -237,7 +220,7 @@
 				};
 			};
 			buildConfigurationList = 3AB2686929BAFFFA00CDF564 /* Build configuration list for PBXProject "Mafia" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = ru;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -263,9 +246,6 @@
 				3AA481E42A1B08A600C91261 /* mafiaSong.mp3 in Resources */,
 				3AC1550929D5D653001A6B8E /* Launch Screen.storyboard in Resources */,
 				3A31283629C12FC80030D752 /* Inter-SemiBold.ttf in Resources */,
-				3AC6BB3729D5F46400F6D7FF /* cardFrame.svg in Resources */,
-				3A9AAA5629D0C8AD001C69FA /* Speaker.png in Resources */,
-				3A31283329C12EA20030D752 /* logo.png in Resources */,
 				3AEBD9FD29D5D3CC00038C53 /* Localizable.strings in Resources */,
 				3AB2687B29BAFFFB00CDF564 /* Assets.xcassets in Resources */,
 			);
@@ -344,6 +324,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -405,6 +386,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -447,7 +429,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jedrzejadamski46724.catchthemafia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -485,7 +467,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jedrzejadamski46724.catchthemafia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
