@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		3A31283629C12FC80030D752 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A31283529C12FC80030D752 /* Inter-SemiBold.ttf */; };
 		3A38E99329CF2FA5008BBE3E /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A38E99229CF2FA5008BBE3E /* Cards.swift */; };
+		3A7049B22A43BDC200C9351C /* mafiaSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A7049B12A43BDC200C9351C /* mafiaSong.mp3 */; };
 		3A9AAA5929D0CFE9001C69FA /* SwipeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AAA5829D0CFE9001C69FA /* SwipeCardViewController.swift */; };
-		3AA481E42A1B08A600C91261 /* mafiaSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3AA481E32A1B08A600C91261 /* mafiaSong.mp3 */; };
 		3AB2687229BAFFFA00CDF564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2687129BAFFFA00CDF564 /* AppDelegate.swift */; };
 		3AB2687429BAFFFA00CDF564 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2687329BAFFFA00CDF564 /* SceneDelegate.swift */; };
 		3AB2687B29BAFFFB00CDF564 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AB2687A29BAFFFB00CDF564 /* Assets.xcassets */; };
@@ -28,8 +28,8 @@
 /* Begin PBXFileReference section */
 		3A31283529C12FC80030D752 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		3A38E99229CF2FA5008BBE3E /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		3A7049B12A43BDC200C9351C /* mafiaSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mafiaSong.mp3; sourceTree = "<group>"; };
 		3A9AAA5829D0CFE9001C69FA /* SwipeCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCardViewController.swift; sourceTree = "<group>"; };
-		3AA481E32A1B08A600C91261 /* mafiaSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mafiaSong.mp3; sourceTree = "<group>"; };
 		3AB2686E29BAFFFA00CDF564 /* Mafia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mafia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB2687129BAFFFA00CDF564 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AB2687329BAFFFA00CDF564 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -167,8 +167,8 @@
 		3ABAC0E929C11D1500CC2422 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				3A7049B12A43BDC200C9351C /* mafiaSong.mp3 */,
 				3AB2687129BAFFFA00CDF564 /* AppDelegate.swift */,
-				3AA481E32A1B08A600C91261 /* mafiaSong.mp3 */,
 				3AB2687329BAFFFA00CDF564 /* SceneDelegate.swift */,
 			);
 			path = Other;
@@ -243,8 +243,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AA481E42A1B08A600C91261 /* mafiaSong.mp3 in Resources */,
 				3AC1550929D5D653001A6B8E /* Launch Screen.storyboard in Resources */,
+				3A7049B22A43BDC200C9351C /* mafiaSong.mp3 in Resources */,
 				3A31283629C12FC80030D752 /* Inter-SemiBold.ttf in Resources */,
 				3AEBD9FD29D5D3CC00038C53 /* Localizable.strings in Resources */,
 				3AB2687B29BAFFFB00CDF564 /* Assets.xcassets in Resources */,
@@ -429,7 +429,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jedrzejadamski46724.catchthemafia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -467,7 +467,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jedrzejadamski46724.catchthemafia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
