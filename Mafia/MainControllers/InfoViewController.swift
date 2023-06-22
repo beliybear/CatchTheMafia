@@ -107,6 +107,6 @@ class InfoViewController: UIViewController {
         let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
         feedbackGenerator.prepare()
         feedbackGenerator.impactOccurred()
-        self.navigationController?.pushViewController(MainViewController(), animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
 }
