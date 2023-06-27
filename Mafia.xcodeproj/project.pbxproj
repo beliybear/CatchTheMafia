@@ -10,6 +10,7 @@
 		3A31283629C12FC80030D752 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A31283529C12FC80030D752 /* Inter-SemiBold.ttf */; };
 		3A38E99329CF2FA5008BBE3E /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A38E99229CF2FA5008BBE3E /* Cards.swift */; };
 		3A7049B22A43BDC200C9351C /* mafiaSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A7049B12A43BDC200C9351C /* mafiaSong.mp3 */; };
+		3A789C072A4A511100EE89E0 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A789C062A4A511100EE89E0 /* Protocols.swift */; };
 		3A9AAA5929D0CFE9001C69FA /* SwipeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AAA5829D0CFE9001C69FA /* SwipeCardViewController.swift */; };
 		3AB2687229BAFFFA00CDF564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2687129BAFFFA00CDF564 /* AppDelegate.swift */; };
 		3AB2687429BAFFFA00CDF564 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2687329BAFFFA00CDF564 /* SceneDelegate.swift */; };
@@ -29,6 +30,7 @@
 		3A31283529C12FC80030D752 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		3A38E99229CF2FA5008BBE3E /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 		3A7049B12A43BDC200C9351C /* mafiaSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mafiaSong.mp3; sourceTree = "<group>"; };
+		3A789C062A4A511100EE89E0 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		3A9AAA5829D0CFE9001C69FA /* SwipeCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCardViewController.swift; sourceTree = "<group>"; };
 		3AB2686E29BAFFFA00CDF564 /* Mafia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mafia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB2687129BAFFFA00CDF564 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				3A7049B12A43BDC200C9351C /* mafiaSong.mp3 */,
 				3AB2687129BAFFFA00CDF564 /* AppDelegate.swift */,
 				3AB2687329BAFFFA00CDF564 /* SceneDelegate.swift */,
+				3A789C062A4A511100EE89E0 /* Protocols.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				3AB2687229BAFFFA00CDF564 /* AppDelegate.swift in Sources */,
 				3AE70DC729CF45EA00A970F2 /* CardView.swift in Sources */,
 				3A38E99329CF2FA5008BBE3E /* Cards.swift in Sources */,
+				3A789C072A4A511100EE89E0 /* Protocols.swift in Sources */,
 				3AE70DC829CF45EA00A970F2 /* ChooseViewController.swift in Sources */,
 				3AE70DC029CF45B400A970F2 /* SettingsViewController.swift in Sources */,
 				3AB2687429BAFFFA00CDF564 /* SceneDelegate.swift in Sources */,
@@ -429,7 +433,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2.1;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jedrzejadamski46724.catchthemafia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -467,7 +471,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2.1;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jedrzejadamski46724.catchthemafia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

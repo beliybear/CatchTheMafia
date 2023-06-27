@@ -12,6 +12,11 @@ class GameViewController: UIViewController {
     // VAR
     private var timer: Timer?
     private let timeLabel = UILabel()
+    var cardCount = 0
+    var swipeVC = SwipeCardViewController()
+    var showSelectedCardNumber: ((Int) -> Void)?
+    weak var cardSelectionDelegate: CardSelectionDelegate?
+    var cardViewControllers: [UIViewController] = []
     
     private lazy var mainButton: UIButton = {
         let button = UIButton()
@@ -25,7 +30,7 @@ class GameViewController: UIViewController {
     private lazy var infoButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "quest"), for: .normal)
-        button.addTarget(self, action: #selector(toInformation), for: .touchUpInside)
+        button.addTarget(self, action: #selector(showCardList), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.isUserInteractionEnabled = true
         return button
@@ -66,10 +71,13 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupTimeLabel()
         setupVC()
         setupConstraints()
+        
+        showSelectedCardNumber = { [weak self] cardNumber in
+            self?.showSelectedCardNumber?(cardNumber)
+        }
     }
     
     private func setupTimeLabel() {
@@ -80,8 +88,22 @@ class GameViewController: UIViewController {
         timeLabel.font = .systemFont(ofSize: 60)
     }
     
+    @objc private func showCardList() {
+        let alertController = UIAlertController(title: "Выберите интересующего вас игрока", message: nil, preferredStyle: .alert)
+        
+        for i in 1..<cardCount+1 {
+            let action = UIAlertAction(title: "Игрок №\(i)", style: .default) { _ in
+                self.cardSelectionDelegate?.showSelectedCardAlert(cardNumber: i)
+            }
+            alertController.addAction(action)
+        }
+        
+        alertController.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     @objc private func startTime() {
-        // Остановить текущий таймер перед созданием нового
         timer?.invalidate()
         
         var timeRemaining = 60
@@ -118,19 +140,6 @@ class GameViewController: UIViewController {
         feedbackGenerator.prepare()
         feedbackGenerator.impactOccurred()
         self.navigationController?.pushViewController(MainViewController(), animated: true)
-    }
-    
-    @objc private func toInformation() {
-        let alertController = UIAlertController(title: NSLocalizedString("Information", comment: ""),
-                                                message: NSLocalizedString("The timer is used to limit the discussion time during the game phases.", comment: ""),
-                                                preferredStyle: .alert)
-        
-        let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""),
-                                     style: .default,
-                                     handler: nil)
-        
-        alertController.addAction(okAction)
-        present(alertController, animated: true, completion: nil)
     }
     
     // CONSTRAINTS
@@ -170,4 +179,3 @@ class GameViewController: UIViewController {
         ])
     }
 }
-

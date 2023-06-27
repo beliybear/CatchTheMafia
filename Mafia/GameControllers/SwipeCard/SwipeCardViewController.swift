@@ -12,6 +12,8 @@ class SwipeCardViewController: UIPageViewController, UIPageViewControllerDataSou
     }()
     
     var cards: [Card] = []
+    var finalCountCard: [String] = []
+    var showCardCallback: ((Int) -> Void)?
     
     private var cardViewControllers: [UIViewController] = []
     private lazy var showButton: UIButton = {
@@ -67,6 +69,7 @@ class SwipeCardViewController: UIPageViewController, UIPageViewControllerDataSou
             viewController.view.addSubview(cardView) // Add this line
             viewController.view = cardView
             viewController.view.backgroundColor = .mainBlack
+            finalCountCard.append(cardView.card.word)
             return viewController
             
         }
@@ -176,7 +179,7 @@ class SwipeCardViewController: UIPageViewController, UIPageViewControllerDataSou
         let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
         feedbackGenerator.prepare()
         feedbackGenerator.impactOccurred()
-            
+        
         if let cardView = sender.view as? CardView,
            let blackOverlay = cardView.viewWithTag(100) {
             
@@ -217,7 +220,7 @@ class SwipeCardViewController: UIPageViewController, UIPageViewControllerDataSou
                 }
             }
         }
-            return nil
+        return nil
     }
     
     @objc private func toMain(){
@@ -238,9 +241,13 @@ class SwipeCardViewController: UIPageViewController, UIPageViewControllerDataSou
         let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
         feedbackGenerator.prepare()
         feedbackGenerator.impactOccurred()
+        
         let gameVC = GameViewController()
+        gameVC.cardCount = cardViewControllers.count
+        gameVC.cardSelectionDelegate = self
         self.navigationController?.pushViewController(gameVC, animated: true)
     }
+    
     
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return cardViewControllers.count
@@ -252,5 +259,19 @@ class SwipeCardViewController: UIPageViewController, UIPageViewControllerDataSou
             return currentIndex
         }
         return 0
+    }
+}
+
+extension SwipeCardViewController: CardSelectionDelegate {
+    
+    func showSelectedCardAlert(cardNumber: Int) {
+        guard cardNumber > 0 && cardNumber <= cardViewControllers.count else {
+            print("Invalid card number")
+            return
+        }
+        let alertController = UIAlertController(title: "Игрок №\(cardNumber)", message: "\(finalCountCard[cardNumber-1])", preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
 }
