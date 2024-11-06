@@ -1,0 +1,49 @@
+/*
+  Localizable Rus.strings
+  Mafia
+
+  Created by Beliy.Bear on 30.03.2023.
+*/
+
+"Catch The Mafia" = "Catch The Mafia";
+"New Game" = "Новая Игра";
+"Made by BeliyBear" = "Made by BeliyBear";
+"PLAY" = "Играть";
+"START" = "Играть";
+"MAFIA" = "МАФИЯ";
+"HOOKER" = "ЛЮБОВНИЦА";
+"CIVILIAN" = "МИРНЫЙ";
+"SHERIFF" = "ШЕРИФ";
+"DOCTOR" = "ДОКТОР";
+"SPEAKER" = "ВЕДУЩИЙ";
+"Not enough cards" = "Недостаточно карт";
+"You need at least 2 cards to start the game" = "Вам нужно выбрать не менее 3 карт, чтобы начать игру";
+"Don't forget to update me!" = "Не забудь апдейтнуть меня!";
+"TAP ON ME" = "Нажми на меня";
+"Start Timer" = "Начать говорить";
+"Stop Timer" = "CТОП";
+"Start Again" = "ЗАНОВО";
+"Information" = "Информация";
+"Settings" = "Настройки";
+"The timer is used to limit the discussion time during the game phases." = "Таймер используется для того, чтобы ограничить время обсуждения каждого игрока на этапах игры.";
+"Terms and Conditions" = "Условия использования";
+"Privacy Policy" = "Политика конфиденциальности";
+"Enable Notifications" = "Включить уведомления";
+"Notifications Disabled" = "Уведомления отключены";
+"Do you want to enable notifications for updates and important alerts?" = "Вы хотите включить уведомления для обновлений и важных уведомлений?";
+"Disable" = "Выключить";
+"Enable" = "Включить";
+"Yes" = "Да";
+"No" = "Нет";
+"Error" = "Ошибка";
+"Notification permission not granted." = "Разрешение на уведомления не было предоставлено. Пожалуйста, включите их в настройках приложения.";
+"We respect your privacy and are committed to protecting your personal data." = "Мы уважаем вашу конфиденциальность и стремимся защищать ваши персональные данные.";
+"The data collected is used solely to improve the quality of the services provided." = "Собранные данные используются исключительно для улучшения качества предоставляемых услуг.";
+"We will not share your data with third parties without your consent." = "Мы не будем передавать ваши данные третьим лицам без вашего согласия.";
+"You have the right to request information about your data and demand its deletion." = "Вы имеете право запрашивать информацию о ваших данных и требовать их удаления.";
+"By using this application, you agree to our privacy policy." = "Используя это приложение, вы соглашаетесь с нашей политикой конфиденциальности.";
+"You must be at least 18 years old to use this application." = "Вам должно быть не менее 18 лет, чтобы использовать это приложение.";
+"Respect other players and their right to participate in the game." = "Уважайте других игроков и их право участвовать в игре.";
+"Cheating or any other forms of fraud are prohibited." = "Мошенничество или любые другие формы обмана запрещены.";
+"We reserve the right to modify these terms at any time." = "Мы оставляем за собой право изменять эти условия в любое время.";
+"By using this application, you agree to these terms." = "Используя это приложение, вы соглашаетесь с этими условиями.";

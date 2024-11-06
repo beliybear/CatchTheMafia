@@ -1,0 +1,49 @@
+/*
+  Localizable En.strings
+  Mafia
+
+  Created by Beliy.Bear on 30.03.2023.
+*/
+
+"Catch The Mafia" = "Catch The Mafia";
+"New Game" = "New Game";
+"Made by BeliyBear" = "Made by BeliyBear";
+"PLAY" = "PLAY";
+"START" = "START";
+"MAFIA" = "MAFIA";
+"HOOKER" = "HOOKER";
+"CIVILIAN" = "CIVILIAN";
+"SHERIFF" = "SHERIFF";
+"DOCTOR" = "DOCTOR";
+"SPEAKER" = "SPEAKER";
+"Not enough cards" = "Not enough cards";
+"You need at least 3 cards to start the game" = "You need at least 3 cards to start the game";
+"Don't forget to update me!" = "Don't forget to update me!";
+"TAP ON ME" = "TAP ON ME";
+"Start Timer" = "Start Timer";
+"Stop Timer" = "Stop Timer";
+"Start Again" = "Start Again";
+"Information" = "Information";
+"Settings" = "Settings";
+"The timer is used to limit the discussion time during the game phases." = "The timer is used to limit the discussion time during the game phases.";
+"Terms and Conditions" = "Terms and Conditions";
+"Privacy Policy" = "Privacy Policy";
+"Enable Notifications" = "Enable Notifications";
+"Notifications Disabled" = "Notifications disabled";
+"Do you want to enable notifications for updates and important alerts?" = "Do you want to enable notifications for updates and important alerts?";
+"Disable" = "Disable";
+"Enable" = "Enable";
+"Yes" = "Yes";
+"No" = "No";
+"Error" = "Error";
+"Notification permission not granted." = "Notification permission not granted. Please enable it in app settings.";
+"We respect your privacy and are committed to protecting your personal data." = "We respect your privacy and are committed to protecting your personal data.";
+"The data collected is used solely to improve the quality of the services provided." = "The data collected is used solely to improve the quality of the services provided.";
+"We will not share your data with third parties without your consent." = "We will not share your data with third parties without your consent.";
+"You have the right to request information about your data and demand its deletion." = "You have the right to request information about your data and demand its deletion.";
+"By using this application, you agree to our privacy policy." = "By using this application, you agree to our privacy policy.";
+"1. You must be at least 18 years old to use this application." = "1. You must be at least 18 years old to use this application.";
+"2. Respect other players and their right to participate in the game." = "2. Respect other players and their right to participate in the game.";
+"3. Cheating or any other forms of fraud are prohibited." = "3. Cheating or any other forms of fraud are prohibited.";
+"4. We reserve the right to modify these terms at any time." = "4. We reserve the right to modify these terms at any time.";
+"5. By using this application, you agree to these terms." = "5. By using this application, you agree to these terms.";
