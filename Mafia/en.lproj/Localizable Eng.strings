@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  Mafia
+
+  Created by Beliy.Bear on 30.03.2023.
+  
+*/
+
+"New Game" = "New Game";
+"Catch The Mafia" = "Catch The Mafia";
+"Let's play!" = "Let's play!";
+"START" = "START";
+"MAFIA" = "MAFIA";
+"CIVILIAN" = "CIVILIAN";
+"SHERIFF" = "SHERIFF";
+"DOCTOR" = "DOCTOR";
+"SPEAKER" = "SPEAKER";
+"Not enough cards" = "Not enough cards";
+"You need at least 2 cards to start the game" = "You need at least 2 cards to start the game";
